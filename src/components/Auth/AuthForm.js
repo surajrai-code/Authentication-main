@@ -9,7 +9,7 @@ const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [isCorrect, setIsCorrect] = useState(false);
 const history = useHistory()
-  // const authCtx = useContext(AuthContext)
+  const authCtx = useContext(AuthContext)
 
   const emailInputRef = useRef("");
   const passwordInputRef = useRef("");
@@ -57,7 +57,7 @@ const history = useHistory()
       })
       .then((data) => {
         console.log(data.idToken);
-        // authCtx.login(data.idToken)
+        authCtx.login(data.idToken)
         history.replace('/profile')
   
 
